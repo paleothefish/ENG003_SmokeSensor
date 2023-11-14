@@ -41,11 +41,13 @@ void loop() {
   // Print the measurement to the serial monitor
   Serial.println(measure);
 
+  //If dust/smoke level is greater than 300 ADC count, then turn on the LEDs.
   if (measure > 300.0) {
     digitalWrite(RED_LED1, HIGH);
     digitalWrite(RED_LED2, HIGH);
     digitalWrite(RED_LED3, HIGH);
   } else {
+    //Otherwise, leave the LED off. 
     digitalWrite(RED_LED1, LOW);
     digitalWrite(RED_LED2, LOW);
     digitalWrite(RED_LED3, LOW);
